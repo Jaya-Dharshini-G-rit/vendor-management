@@ -1,0 +1,44 @@
+<html lang="en">
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p class="table_header1">List of Quotation</p>
+            <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+        </div>
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Purchase No.</th>
+                        <th>Product</th>
+                        <th>Item Interval</th>
+                        <th>Last Item</th>
+                        <th>Exchange Rate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sales of salesData| searchFilter:docNo:'PO_NUMBER'">
+                        <td>{{sales.PO_NUMBER}}</td>
+                        <td><img src="https://drive.google.com/uc?export=view&id=1oL5yePDRKaJ3rwr2_DedGETXfqtF_gv4" /></td>
+                        <td>{{sales.ITEM_INTVL}}</td>
+                        <td>{{sales.LAST_ITEM}}</td>
+                        <td>{{sales.EXCH_RATE}}</td>
+                        <td><button (click)="openDialog(sales)">View</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            
+        </div>
+       
+    </div>
+    
+</body>
+
+</html>
+<ngx-spinner>  
+    <mat-spinner color="primary"></mat-spinner>
+    
+    </ngx-spinner>  

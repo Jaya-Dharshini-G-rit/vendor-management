@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <a class="popup__close"  mat-dialog-close>X</a>
+        <h2 class="title"> Goods Detail</h2>
+    <div class="labCont">
+    <div class="label">
+        <p class="leftLabel">Material Document</p>
+        <p class="leftLabel">Document Year</p>
+        <p class="leftLabel">Storage Location</p>
+        <p class="leftLabel">Vendor Name</p>
+        <p class="leftLabel">Entry Quantity</p>
+        <p class="leftLabel">Price Unit</p>
+        <p class="leftLabel">Purchase Order</p>
+        <p class="leftLabel">Currency</p>
+        <p class="leftLabel">Material</p>
+    </div>
+    <div class="label">
+        <p class="rightLab">{{delivery.MAT_DOC}}</p>
+        <p class="rightLab">{{delivery.DOC_YEAR}}</p>
+        <p class="rightLab">{{delivery.STGE_LOC}}</p>
+        <p class="rightLab">{{delivery.VENDOR}}</p>
+        <p class="rightLab">{{delivery.ENTRY_QNT}}</p>
+        <p class="rightLab">{{delivery.PO_PR_QNT}}</p>
+        <p class="rightLab">{{delivery.PO_NUMBER}}</p>
+        <p class="rightLab">{{delivery.CURRENCY}}</p>
+        <p class="rightLab">{{delivery.MATERIAL}}</p>
+
+    </div>
+    </div>
+    
+    <div mat-dialog-actions>
+      <button class="button-85" mat-dialog-close>Close</button>
+      
+    </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <a class="popup__close"  mat-dialog-close>X</a>
+        <h2 class="title"> Purchase Order Detail</h2>
+    <div class="labCont">
+    <div class="label">
+        <p class="leftLabel">Purchase Number</p>
+        <p class="leftLabel">Item Interval</p>
+        <p class="leftLabel">Last Item</p>
+        <p class="leftLabel">Vendor Name</p>
+        <p class="leftLabel">Currency</p>
+        <p class="leftLabel">Document Date</p>
+        <p class="leftLabel">Quotaion Deadline</p>
+        <p class="leftLabel">Document Type</p>
+        <p class="leftLabel">Document Status</p>
+    </div>
+    <div class="label">
+        <p class="rightLab">{{purchaseOrder.PO_NUMBER}}</p>
+        <p class="rightLab">{{purchaseOrder.ITEM_INTVL}}</p>
+        <p class="rightLab">{{purchaseOrder.LAST_ITEM}}</p>
+        <p class="rightLab">{{purchaseOrder.VEND_NAME}}</p>
+        <p class="rightLab">{{purchaseOrder.CURRENCY}}</p>
+        <p class="rightLab">{{purchaseOrder.DOC_DATE}}</p>
+        <p class="rightLab">{{purchaseOrder.QUOT_DEAD}}</p>
+        <p class="rightLab">{{purchaseOrder.DOC_TYPE}}</p>
+        <p class="rightLab">{{purchaseOrder.STATUS}}</p>
+    </div>
+    </div>
+    
+    <div mat-dialog-actions>
+      <button class="button-85" mat-dialog-close>Close</button>
+      
+    </div>
+    </body>
+</html>

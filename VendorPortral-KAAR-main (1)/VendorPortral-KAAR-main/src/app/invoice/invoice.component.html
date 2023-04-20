@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+</head>
+<body>
+    <section id="content">
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Invoice</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Invoice</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' ></i></li>
+                    <li>
+                        <a class="active" href="#">Payment</a>
+                    </li>
+                </ul>
+            </div>
+            <div  (click)="createPdf()">
+            <a class="btn-download">
+                <i  class='bx bxs-cloud-download' ></i>
+                <span class="text">Download PDF</span>
+            </a>
+            </div>
+        </div>
+
+        <ul class="box-info">
+            <li routerLink="/Memo">
+                <i class='bx bx-list-ul' ></i>
+                <span class="text">
+                    
+                    <h3>Credit/Debit Memo</h3>
+                </span>
+            </li>
+            <li routerLink="/Payments">
+                
+                <i class='bx bx-money' ></i>
+                <span class="text">
+                    
+                    <h3>Payments</h3>
+                </span>
+           
+            </li>
+           
+        </ul>
+        </main>
+    </section>
+    <div class="table">
+        <div class="table_header">
+            <p class="table_header1">List of Invoice Orders</p>
+            <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+        </div>
+        <div class="table_section" id="invoice">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice No.</th>
+                       
+                        <th>Fiscal Year</th>
+                        
+                        <th>Document Date</th>
+                        <th>Gross Amount</th>
+                        <th>Currency</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sales of inquiryData  | searchFilter:docNo:'INV_DOC_NO'">
+                        <td>{{sales.INV_DOC_NO}}</td>
+                        <td>{{sales.FISC_YEAR}}</td>
+                        <td>{{sales.DOC_DATE}}</td>
+                        <td>{{sales.GROSS_AMNT}}</td>
+                        <td>{{sales.CURRENCY}}</td>
+                        <td><button (click)="openDialog(sales)">View</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="pagination">
+            <div><i class="fa-solid fa-angles-left"></i></div>
+            <div><i class="fa-solid fa-chevron-left"></i></div>
+            <div>1</div>
+            <div>2</div>
+            <div><i class="fa-solid fa-chevron-right"></i></div>
+            <div><i class="fa-solid fa-angles-right"></i></div>
+        </div> -->
+    </div>
+<ngx-spinner>  
+    <mat-spinner color="primary"></mat-spinner>
+    
+    </ngx-spinner>  
+</body>
+</html>

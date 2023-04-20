@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <img class="wave" src="../../assets/images/wave.png">
+        <div class="container">
+            <div class="img">
+                <img src="../../assets/images/bg.svg">
+            </div>
+            <div class="login-content">
+                <div class="waviy">
+                    <span style="--i:1">V</span>
+                    <span style="--i:2">e</span>
+                    <span style="--i:4">n</span>
+                    <span style="--i:3">d</span>
+                    <span style="--i:4">o</span>
+                    <span style="--i:5">r</span>
+                   
+                    <span style="--i:8">&nbsp;</span>
+                    <span style="--i:9">P</span>
+                    <span style="--i:10">o</span>
+                    <span style="--i:11">r</span>
+                    <span style="--i:12">t</span>
+                    <span style="--i:13">a</span>
+                    <span style="--i:14">l</span>
+                    
+                   </div>
+                <form>
+                    <img src="../../assets/images/avatar.svg">
+                    <p class="title">LOGIN</p>
+                       <div class="input-div one">
+                          <div class="i">
+                                  <i class="fas fa-user"></i>
+                          </div>
+                          <div class="div">
+                                  <h5>Username</h5>
+                                  <input [(ngModel)]="loginData.email" name="email" type="text" class="input" required>
+                          </div>
+                       </div>
+                       <div class="input-div pass">
+                          <div class="i"> 
+                               <i class="fas fa-lock"></i>
+                          </div>
+                          <div class="div">
+                               <h5>Password</h5>
+                               <input [(ngModel)]="loginData.password" name="password" type="password" class="input" required>
+                       </div>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                    <button  class="btn" type="button" (click)="Login()">Login</button>
+                </form>
+            </div>
+            </div>
+
+
+            <script type="text/javascript" src="js/main.js">
+                
+            </script>
+            <ngx-spinner>  
+                <mat-spinner color="primary"></mat-spinner>
+                
+                </ngx-spinner>  
+    </body>
+</html>

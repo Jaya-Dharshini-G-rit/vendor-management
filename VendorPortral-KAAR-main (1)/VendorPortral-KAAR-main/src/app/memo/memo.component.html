@@ -1,0 +1,115 @@
+<html lang="en">
+  <head> </head>
+  <body>
+    <section id="content">
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Invoice</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Invoice Memo</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Credit/Debit</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <mat-tab-group dynamicHeight>
+          <mat-tab label="Credit Memo">
+            <div class="table">
+              <div class="table_header">
+                <p class="table_header1">List of Credit</p>
+                <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+              </div>
+              <div class="table_section" id="invoice">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Doc No.</th>
+
+                      <th>Fiscal Year</th>
+
+                      <th>Amount (LC)</th>
+                      <th>Amount (DC)</th>               
+                      <th>Currency</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let sales of creditData | searchFilter:docNo:'BELNR'">
+                      <td>{{ sales.BELNR }}</td>
+                      <td>{{ sales.GJAHR }}</td>
+                      <td>{{ sales.DMBTR }}</td>
+                      <td>{{ sales.WRBTR }}</td>
+                      <td>{{ sales.PSWSL }}</td>
+                      <td>{{ sales.ERFMG }}</td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <div class="pagination">
+                        <div><i class="fa-solid fa-angles-left"></i></div>
+                        <div><i class="fa-solid fa-chevron-left"></i></div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div><i class="fa-solid fa-chevron-right"></i></div>
+                        <div><i class="fa-solid fa-angles-right"></i></div>
+                    </div> -->
+            </div>
+          </mat-tab>
+          <mat-tab label="Debit Memo">
+            <div class="table">
+              <div class="table_header">
+                <p class="table_header1">List of Debit</p>
+                <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+              </div>
+              <div class="table_section" id="invoice">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Doc No.</th>
+
+                      <th>Fiscal Year</th>
+
+                      <th>Amount (LC)</th>
+                      <th>Amount (DC)</th>               
+                      <th>Currency</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let sales of debitData | searchFilter:docNo:'BELNR'">
+                      <td>{{ sales.BELNR }}</td>
+                      <td>{{ sales.GJAHR }}</td>
+                      <td>{{ sales.DMBTR }}</td>
+                      <td>{{ sales.WRBTR }}</td>
+                      <td>{{ sales.PSWSL }}</td>
+                      <td>{{ sales.ERFMG }}</td>
+                     
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <div class="pagination">
+                        <div><i class="fa-solid fa-angles-left"></i></div>
+                        <div><i class="fa-solid fa-chevron-left"></i></div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div><i class="fa-solid fa-chevron-right"></i></div>
+                        <div><i class="fa-solid fa-angles-right"></i></div>
+                    </div> -->
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </main>
+    </section>
+
+    <ngx-spinner>
+      <mat-spinner color="primary"></mat-spinner>
+    </ngx-spinner>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<div *ngIf="!authenticated">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  </div>
+  
+  <div *ngIf="authenticated">
+    <ng-container *ngTemplateOutlet="template1"></ng-container>
+  </div>
+  
+  <ng-template #template>
+    <router-outlet></router-outlet>
+  
+  </ng-template>
+  
+  <ng-template #template1>
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+    <app-body
+        [collapsed]="isSideNavCollapsed"
+        [screenWidth]="screenWidth"
+    ></app-body>
+  
+  </ng-template>
+  
+  

@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <a class="popup__close"  mat-dialog-close>X</a>
+        <h2 class="title"> Sales Detail</h2>
+    <div class="labCont">
+    <div class="label">
+        <p class="leftLabel">Invoice Number</p>
+        <p class="leftLabel">Fiscal Year</p>
+        <p class="leftLabel">Date</p>
+        <p class="leftLabel">Gross Amount</p>
+        <p class="leftLabel">Currency</p>
+        <p class="leftLabel">Invoice Party</p>
+        <p class="leftLabel">Invoice Status</p>
+        <p class="leftLabel">Reference Document</p>
+    </div>
+    <div class="label">
+        <p class="rightLab">{{delivery.INV_DOC_NO}}</p>
+        <p class="rightLab">{{delivery.FISC_YEAR}}</p>
+        <p class="rightLab">{{delivery.DOC_DATE}}</p>
+        <p class="rightLab">{{delivery.GROSS_AMNT}}</p>
+        <p class="rightLab">{{delivery.CURRENCY}}</p>
+        <p class="rightLab">{{delivery.DIFF_INV}}</p>
+        <p class="rightLab">{{delivery.INVOICE_STATUS}}</p>
+        <p class="rightLab">{{delivery.REF_DOC_NO}}</p>
+    </div>
+    </div>
+    
+    <div mat-dialog-actions>
+      <button class="button-85" mat-dialog-close>Close</button>
+      
+    </div>
+    </body>
+</html>
+

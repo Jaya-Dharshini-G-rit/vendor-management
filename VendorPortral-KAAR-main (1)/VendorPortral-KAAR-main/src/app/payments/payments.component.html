@@ -1,0 +1,51 @@
+<html lang="en">
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p class="table_header1">List of Payments</p>
+            <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+        </div>
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Document No</th>
+                        <th>Person</th>
+                        <th>Fiscal Year</th>
+                        
+                        <th>Date</th>
+                        <th>Amount (LC)</th>
+                        <th>Amount (DC)</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sales of inquiryData | searchFilter:docNo:'DOC_NO'">
+                        <td>{{sales.DOC_NO}}</td>
+                        <td><img src="https://flyclipart.com/thumb2/profile-icon-png-black-196391.png" /></td>
+                        <td>{{sales.FISC_YEAR}}</td>
+                        <td>{{sales.DOC_DATE}}</td>
+                        <td>{{sales.LC_AMOUNT}}</td>
+                        <td>{{sales.AMT_DOCCUR}}</td>
+                        <td>{{sales.AMOUNT}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="pagination">
+            <div><i class="fa-solid fa-angles-left"></i></div>
+            <div><i class="fa-solid fa-chevron-left"></i></div>
+            <div>1</div>
+            <div>2</div>
+            <div><i class="fa-solid fa-chevron-right"></i></div>
+            <div><i class="fa-solid fa-angles-right"></i></div>
+        </div> -->
+    </div>
+</body>
+
+</html>
+<ngx-spinner>  
+    <mat-spinner color="primary"></mat-spinner>
+    
+    </ngx-spinner>  

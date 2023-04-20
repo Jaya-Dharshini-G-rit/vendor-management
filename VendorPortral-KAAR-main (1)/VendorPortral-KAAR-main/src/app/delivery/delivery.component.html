@@ -1,0 +1,49 @@
+<html lang="en">
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p class="table_header1">List of Goods Receipt</p>
+            <div> <input class="search" placeholder="Search Document" [(ngModel)]="docNo" /> </div>
+        </div>
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material Document</th>
+                        <th>Product</th>
+                        <th>Document Year</th>
+                        
+                        <th>Material</th>
+                        <th>Storage Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sales of inquiryData | searchFilter:docNo:'MAT_DOC'">
+                        <td>{{sales.MAT_DOC}}</td>
+                        <td><img src="https://drive.google.com/uc?export=view&id=1oL5yePDRKaJ3rwr2_DedGETXfqtF_gv4" /></td>
+                        <td>{{sales.DOC_YEAR}}</td>
+                        <td>{{sales.MATERIAL}}</td>
+                        <td>{{sales.STGE_LOC}}</td>
+                        <td><button (click)="openDialog(sales)">View</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="pagination">
+            <div><i class="fa-solid fa-angles-left"></i></div>
+            <div><i class="fa-solid fa-chevron-left"></i></div>
+            <div>1</div>
+            <div>2</div>
+            <div><i class="fa-solid fa-chevron-right"></i></div>
+            <div><i class="fa-solid fa-angles-right"></i></div>
+        </div> -->
+    </div>
+</body>
+
+</html>
+<ngx-spinner>  
+    <mat-spinner color="primary"></mat-spinner>
+    
+    </ngx-spinner>  

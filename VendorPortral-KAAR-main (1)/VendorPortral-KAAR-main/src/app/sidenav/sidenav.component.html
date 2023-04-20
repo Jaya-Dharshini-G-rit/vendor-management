@@ -1,0 +1,52 @@
+
+<div class="sidenav" [ngClass]="collapsed?'sidenav-collapsed':''">
+    <div class="logo-container">
+       <img (click)="toggleCollapse()" src="../../assets/images/KaarLogo.png" />
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Vendor</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item" (click)="logout()" >
+
+            <a class="sidenav-nav-link" >
+
+                <i class="sidenav-link-icon fa fa-sign-out"></i>
+
+                <span class="sidenav-link-text" *ngIf="collapsed">Logout</span>
+
+            </a>
+
+        </li>
+    </ul>
+</div>
+<!-- <section id="content">
+<nav>
+    <i class='bx bx-menu' ></i>
+    <a href="#" class="nav-link">Categories</a>
+    <form action="#">
+        <div class="form-input">
+            <input type="search" placeholder="Search...">
+            <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+        </div>
+    </form>
+    <input type="checkbox" id="switch-mode" hidden>
+    <label for="switch-mode" class="switch-mode"></label>
+    <a href="#" class="notification">
+        <i class='bx bxs-bell' ></i>
+        <span class="num">8</span>
+    </a>
+    <a href="#" class="profile">
+        <img src="../../assets/images/KaarLogo.png">
+    </a>
+</nav>
+</section>
+</body> -->
